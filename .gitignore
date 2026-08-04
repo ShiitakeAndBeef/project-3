@@ -1,0 +1,21 @@
+# Virtual environment
+ll_env/
+
+# Database
+*.sqlite3
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Environment secrets
+.env
+
+# Editor / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Collected static files (regenerated on deploy)
+/staticfiles/
