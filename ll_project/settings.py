@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v(cg3&a@__)7&n_$9+o&o$_xp)kbv7eq=61_$96ayo)&m3sb6+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -127,3 +128,6 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'learning_logs:index'
 LOGIN_URL = 'accounts:login'
 LOGOUT_REDIRECT_URL = 'learning_logs:index'
+
+# Static files, needed for deployment where runserver no longer serves them.
+STATIC_ROOT = BASE_DIR / 'staticfiles'
