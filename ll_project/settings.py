@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-v(cg3&a@__)7&n_$9+o&o$_xp)kbv7eq=61_$96ayo)&m3sb6+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
+ALLOWED_HOSTS = ['172.31.28.174', 'localhost', '127.0.0.1']
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'YOURUSERNAME.pythonanywhere.com']
 
 #CSRF_TRUSTED_ORIGINS = ['https://YOURUSERNAME.pythonanywhere.com']
