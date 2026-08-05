@@ -14,6 +14,12 @@ def topic(request, topic_id):
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
 
+def topics(request):
+    """Show all topics."""
+    topics = Topic.objects.order_by('date_added')
+    context = {'topics': topics}
+    return render(request, 'learning_logs/topics.html', context)
+
 def new_topic(request):
     """Add a new topic."""
     if request.method != 'POST':
